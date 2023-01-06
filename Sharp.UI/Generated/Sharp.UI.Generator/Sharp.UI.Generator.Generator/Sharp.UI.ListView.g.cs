@@ -57,7 +57,6 @@ namespace Sharp.UI
         public new object Footer { get => base.Footer; set => base.Footer = MauiWrapper.Value<object>(value); }
         public new object Header { get => base.Header; set => base.Header = MauiWrapper.Value<object>(value); }
         public new object SelectedItem { get => base.SelectedItem; set => base.SelectedItem = MauiWrapper.Value<object>(value); }
-        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
 
         // ----- set value method -----

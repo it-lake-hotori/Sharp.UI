@@ -39,32 +39,31 @@ namespace Sharp.UI
         }
         
         public static T BasedOn<T>(this T obj,
-            Sharp.UI.Style basedOn)
+            Microsoft.Maui.Controls.Style basedOn)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(basedOn);
-            mauiObject.BasedOn = mauiValue;
+            mauiObject.BasedOn = (Microsoft.Maui.Controls.Style)basedOn;
             return obj;
         }
         
         public static T BasedOn<T>(this T obj,
-            System.Func<ValueBuilder<Sharp.UI.Style>, ValueBuilder<Sharp.UI.Style>> buildValue)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Style>, ValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var builder = buildValue(new ValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.BasedOn = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(builder.GetValue());
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
+            if (builder.ValueIsSet()) mauiObject.BasedOn = builder.GetValue();
             return obj;
         }
         
         public static T BasedOn<T>(this T obj,
-            System.Func<LazyValueBuilder<Sharp.UI.Style>, LazyValueBuilder<Sharp.UI.Style>> buildValue)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Style>, LazyValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var builder = buildValue(new LazyValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.BasedOn = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(builder.GetValue());
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Style>());
+            if (builder.ValueIsSet()) mauiObject.BasedOn = builder.GetValue();
             return obj;
         }
         

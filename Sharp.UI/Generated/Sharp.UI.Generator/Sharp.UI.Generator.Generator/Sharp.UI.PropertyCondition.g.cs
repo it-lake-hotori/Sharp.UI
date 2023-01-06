@@ -8,40 +8,29 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.PropertyCondition</c> class.
-    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.PropertyCondition</c> class.
     /// </summary>
-    public partial class PropertyCondition : Sharp.UI.IPropertyCondition, IMauiWrapper, ISealedMauiWrapper
+    public partial class PropertyCondition : Microsoft.Maui.Controls.PropertyCondition, Sharp.UI.IPropertyCondition, IMauiWrapper
     {
         // ----- maui object -----
 
-        public object _maui_RawObject { get; set; }
-
-        public Microsoft.Maui.Controls.PropertyCondition MauiObject { get => (Microsoft.Maui.Controls.PropertyCondition)_maui_RawObject; protected set => _maui_RawObject = value; }
+        public Sharp.UI.PropertyCondition MauiObject { get => this; }
 
         // ----- constructors -----
 
-        public PropertyCondition(Microsoft.Maui.Controls.PropertyCondition propertyCondition)
-        {
-            MauiObject = propertyCondition;
-        }
+        public PropertyCondition() { }
 
-        public PropertyCondition()
-        {
-            MauiObject = new Microsoft.Maui.Controls.PropertyCondition();
-        }
-
-        public PropertyCondition(out PropertyCondition propertyCondition) : this()
+        public PropertyCondition(out PropertyCondition propertyCondition) 
         {
             propertyCondition = this;
         }
 
-        public PropertyCondition(System.Action<PropertyCondition> configure) : this()
+        public PropertyCondition(System.Action<PropertyCondition> configure) 
         {
             configure(this);
         }
 
-        public PropertyCondition(out PropertyCondition propertyCondition, System.Action<PropertyCondition> configure) : this()
+        public PropertyCondition(out PropertyCondition propertyCondition, System.Action<PropertyCondition> configure) 
         {
             propertyCondition = this;
             configure(this);
@@ -63,15 +52,9 @@ namespace Sharp.UI
             configure(this);
         }
 
-        // ----- operators -----
-
-        public static implicit operator PropertyCondition(Microsoft.Maui.Controls.PropertyCondition mauiObject) => new PropertyCondition(mauiObject);
-        public static implicit operator Microsoft.Maui.Controls.PropertyCondition(PropertyCondition obj) => obj.MauiObject;
-
         // ----- properties / events -----
 
-        public Microsoft.Maui.Controls.BindableProperty Property { get => MauiObject.Property; set => MauiObject.Property = value; }
-        public object Value { get => MauiObject.Value; set => MauiObject.Value = MauiWrapper.Value<object>(value); }
+        public new object Value { get => base.Value; set => base.Value = MauiWrapper.Value<object>(value); }
 
     }
 }

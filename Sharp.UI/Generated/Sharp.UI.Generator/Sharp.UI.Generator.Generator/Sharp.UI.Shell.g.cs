@@ -61,7 +61,6 @@ namespace Sharp.UI
         public new object FlyoutHeader { get => base.FlyoutHeader; set => base.FlyoutHeader = MauiWrapper.Value<object>(value); }
         public new object FlyoutFooter { get => base.FlyoutFooter; set => base.FlyoutFooter = MauiWrapper.Value<object>(value); }
         public new object FlyoutContent { get => base.FlyoutContent; set => base.FlyoutContent = MauiWrapper.Value<object>(value); }
-        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
 
         // ----- set value method -----

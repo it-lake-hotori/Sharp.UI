@@ -43,7 +43,6 @@ namespace Sharp.UI
         public new object PositionChangedCommandParameter { get => base.PositionChangedCommandParameter; set => base.PositionChangedCommandParameter = MauiWrapper.Value<object>(value); }
         public new object EmptyView { get => base.EmptyView; set => base.EmptyView = MauiWrapper.Value<object>(value); }
         public new object RemainingItemsThresholdReachedCommandParameter { get => base.RemainingItemsThresholdReachedCommandParameter; set => base.RemainingItemsThresholdReachedCommandParameter = MauiWrapper.Value<object>(value); }
-        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
 
         // ----- set value method -----

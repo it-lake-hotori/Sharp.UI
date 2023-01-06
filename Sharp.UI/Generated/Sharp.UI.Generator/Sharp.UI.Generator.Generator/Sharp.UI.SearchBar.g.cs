@@ -55,7 +55,6 @@ namespace Sharp.UI
         // ----- properties / events -----
 
         public new object SearchCommandParameter { get => base.SearchCommandParameter; set => base.SearchCommandParameter = MauiWrapper.Value<object>(value); }
-        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
 
         // ----- set value method -----

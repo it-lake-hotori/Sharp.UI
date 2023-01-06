@@ -188,8 +188,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var mauiValue = MauiWrapper.Value<object>(descriptionStyle);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, mauiValue);
+            mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, (Sharp.UI.Style)descriptionStyle);
             return obj;
         }
         
@@ -199,7 +198,7 @@ namespace Sharp.UI.Example
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
             var builder = buildValue(new ValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, builder.GetValue());
             return obj;
         }
         
@@ -209,7 +208,7 @@ namespace Sharp.UI.Example
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, builder.GetValue());
             return obj;
         }
         

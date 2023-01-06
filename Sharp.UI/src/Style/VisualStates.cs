@@ -9,8 +9,7 @@ namespace Sharp.UI
     [SharpObject(typeof(Microsoft.Maui.Controls.VisualStateGroup))]
     public partial class VisualStateGroup
     {
-        public VisualStateGroup(string name = VisualStateGroup.CommonStates)
-            : this(new Microsoft.Maui.Controls.VisualStateGroup())
+        public VisualStateGroup(string name = VisualStateGroup.CommonStates) : this()
         {
             if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
             this.Name = name;
@@ -19,13 +18,18 @@ namespace Sharp.UI
         public const string CommonStates = "CommonStates";
     }
 
+    public static class VisualStateGroupExtension
+    {
+        public static void Add(this Microsoft.Maui.Controls.VisualStateGroup group, VisualState item) => group.States.Add(item);
+    }
+
     [SharpObject(typeof(Microsoft.Maui.Controls.VisualState))]
     [ContentProperty("Setters")]
     public partial class VisualState
     {
         public VisualState() : this(Guid.NewGuid().ToString()) { }
 
-        public VisualState(string name) : this(new Microsoft.Maui.Controls.VisualState())
+        public VisualState(string name)
         {
             this.Name = name;
         }
@@ -81,4 +85,3 @@ namespace Sharp.UI
         }
     }
 }
-

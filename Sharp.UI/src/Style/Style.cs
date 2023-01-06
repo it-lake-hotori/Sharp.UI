@@ -20,14 +20,12 @@ namespace Sharp.UI
     [SharpObject(typeof(Microsoft.Maui.Controls.Style))]
     public partial class Style
     {
-        public Style(Type type)
-            : this(new Microsoft.Maui.Controls.Style(type))
+        public Style(Type type) : base(type)
         {
 
         }
 
-        public Style(Type type, bool applyToDerivedTypes)
-            : this(new Microsoft.Maui.Controls.Style(type))
+        public Style(Type type, bool applyToDerivedTypes) : base(type)
         {
             this.MauiObject.ApplyToDerivedTypes = applyToDerivedTypes;
         }
@@ -49,7 +47,7 @@ namespace Sharp.UI
             return groupList;
         }
 
-        VisualStateGroup GetCommonStatesVisualStateGroup(Microsoft.Maui.Controls.VisualStateGroupList visualStateGroupList)
+        Microsoft.Maui.Controls.VisualStateGroup GetCommonStatesVisualStateGroup(Microsoft.Maui.Controls.VisualStateGroupList visualStateGroupList)
         {
             var visualStateGroup = visualStateGroupList.FirstOrDefault(e => e.Name.Equals(VisualStateGroup.CommonStates));
             if (visualStateGroup == null)
@@ -68,7 +66,7 @@ namespace Sharp.UI
             this.Setters.Add(setter);
         }
 
-        public void Add(VisualStateGroup group)
+        public void Add(Microsoft.Maui.Controls.VisualStateGroup group)
         {
             GetVisualStateGroupList().Add(group);
         }

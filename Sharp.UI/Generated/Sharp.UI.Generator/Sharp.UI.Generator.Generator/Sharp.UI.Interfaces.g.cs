@@ -20,22 +20,22 @@ public partial interface IEllipseGeometry : Sharp.UI.IGeometry { }
 public partial interface ILineGeometry : Sharp.UI.IGeometry { }
 public partial interface IRectangleGeometry : Sharp.UI.IGeometry { }
 public partial interface IGeometryGroup : Sharp.UI.IGeometry { }
-public partial interface IPathGeometry : Sharp.UI.IGeometry { } // from sealed class
-public partial interface IPathFigure : Sharp.UI.IBindableObject { } // from sealed class
+public partial interface IPathGeometry : Sharp.UI.IGeometry { }
+public partial interface IPathFigure : Sharp.UI.IBindableObject { }
 public partial interface IArcSegment : Sharp.UI.IPathSegment { }
 public partial interface IPathSegment : Sharp.UI.IBindableObject { }
 public partial interface IBezierSegment : Sharp.UI.IPathSegment { }
 public partial interface ILineSegment : Sharp.UI.IPathSegment { }
-public partial interface IPolyBezierSegment : Sharp.UI.IPathSegment { } // from sealed class
+public partial interface IPolyBezierSegment : Sharp.UI.IPathSegment { }
 public partial interface IPolyLineSegment : Sharp.UI.IPathSegment { }
 public partial interface IPolyQuadraticBezierSegment : Sharp.UI.IPathSegment { }
 public partial interface IQuadraticBezierSegment : Sharp.UI.IPathSegment { }
 public partial interface IPanGestureRecognizer : Sharp.UI.IGestureRecognizer { }
 public partial interface IGestureRecognizer : Sharp.UI.IElement { }
-public partial interface ITapGestureRecognizer : Sharp.UI.IGestureRecognizer { } // from sealed class
-public partial interface IPinchGestureRecognizer : Sharp.UI.IGestureRecognizer { } // from sealed class
-public partial interface IPointerGestureRecognizer : Sharp.UI.IGestureRecognizer { } // from sealed class
-public partial interface ISwipeGestureRecognizer : Sharp.UI.IGestureRecognizer { } // from sealed class
+public partial interface ITapGestureRecognizer : Sharp.UI.IGestureRecognizer { }
+public partial interface IPinchGestureRecognizer : Sharp.UI.IGestureRecognizer { }
+public partial interface IPointerGestureRecognizer : Sharp.UI.IGestureRecognizer { }
+public partial interface ISwipeGestureRecognizer : Sharp.UI.IGestureRecognizer { }
 public partial interface IDragGestureRecognizer : Sharp.UI.IGestureRecognizer { }
 public partial interface IDropGestureRecognizer : Sharp.UI.IGestureRecognizer { }
 public partial interface IAbsoluteLayout : Sharp.UI.ILayout { }
@@ -67,14 +67,14 @@ public partial interface IFlyoutPage : Sharp.UI.IPage { }
 public partial interface INavigationPage : Sharp.UI.IPage { }
 public partial interface ITabbedPage : Sharp.UI.IMultiPagePage { }
 public partial interface IMultiPagePage : Sharp.UI.IPage { }
-public partial interface IEllipse : Sharp.UI.IShape { } // from sealed class
+public partial interface IEllipse : Sharp.UI.IShape { }
 public partial interface IShape : Sharp.UI.IView { }
-public partial interface IPolyline : Sharp.UI.IShape { } // from sealed class
-public partial interface ILine : Sharp.UI.IShape { } // from sealed class
-public partial interface IPath : Sharp.UI.IShape { } // from sealed class
-public partial interface IPolygon : Sharp.UI.IShape { } // from sealed class
-public partial interface IRectangle : Sharp.UI.IShape { } // from sealed class
-public partial interface IRoundRectangle : Sharp.UI.IShape { } // from sealed class
+public partial interface IPolyline : Sharp.UI.IShape { }
+public partial interface ILine : Sharp.UI.IShape { }
+public partial interface IPath : Sharp.UI.IShape { }
+public partial interface IPolygon : Sharp.UI.IShape { }
+public partial interface IRectangle : Sharp.UI.IShape { }
+public partial interface IRoundRectangle : Sharp.UI.IShape { }
 public partial interface IShell : Sharp.UI.IPage { }
 public partial interface ITabBar : Sharp.UI.IShellItem { }
 public partial interface IShellItem : Sharp.UI.IShellGroupItem { }
@@ -125,33 +125,33 @@ public partial interface ITimePicker : Sharp.UI.IView { }
 public partial interface IWebView : Sharp.UI.IView { }
 public partial interface ISwipeItem : Sharp.UI.IMenuItem { }
 public partial interface ISwipeItemView : Sharp.UI.IContentView { }
-public partial interface ITableSection : Sharp.UI.ITableSectionBaseCell { } // from sealed class
+public partial interface ITableSection : Sharp.UI.ITableSectionBaseCell { }
 public partial interface ITableSectionBaseCell : Sharp.UI.ITableSectionBase { }
 public partial interface ITableSectionBase : Sharp.UI.IBindableObject { }
-public partial interface IColumnDefinition : Sharp.UI.IBindableObject { } // from sealed class
-public partial interface IRowDefinition : Sharp.UI.IBindableObject { } // from sealed class
-public partial interface IBinding : Sharp.UI.IBindingBase { } // from sealed class
+public partial interface IColumnDefinition : Sharp.UI.IBindableObject { }
+public partial interface IRowDefinition : Sharp.UI.IBindableObject { }
+public partial interface IBinding : Sharp.UI.IBindingBase { }
 public partial interface IBindingBase { }
 public partial interface ILinearGradientBrush : Sharp.UI.IGradientBrush { }
 public partial interface IGradientBrush : Sharp.UI.IBrush { }
 public partial interface IBrush : Sharp.UI.IElement { }
 public partial interface IRadialGradientBrush : Sharp.UI.IGradientBrush { }
 public partial interface IGradientStop : Sharp.UI.IElement { }
-public partial interface IStyle { } // from sealed class
-public partial interface ITrigger : Sharp.UI.ITriggerBase { } // from sealed class
+public partial interface IStyle { }
+public partial interface ITrigger : Sharp.UI.ITriggerBase { }
 public partial interface ITriggerBase : Sharp.UI.IBindableObject { }
-public partial interface IDataTrigger : Sharp.UI.ITriggerBase { } // from sealed class
-public partial interface IEventTrigger : Sharp.UI.ITriggerBase { } // from sealed class
-public partial interface IMultiTrigger : Sharp.UI.ITriggerBase { } // from sealed class
-public partial interface IBindingCondition : Sharp.UI.ICondition { } // from sealed class
+public partial interface IDataTrigger : Sharp.UI.ITriggerBase { }
+public partial interface IEventTrigger : Sharp.UI.ITriggerBase { }
+public partial interface IMultiTrigger : Sharp.UI.ITriggerBase { }
+public partial interface IBindingCondition : Sharp.UI.ICondition { }
 public partial interface ICondition { }
-public partial interface IPropertyCondition : Sharp.UI.ICondition { } // from sealed class
-public partial interface IStateTrigger : Sharp.UI.IStateTriggerBase { } // from sealed class
+public partial interface IPropertyCondition : Sharp.UI.ICondition { }
+public partial interface IStateTrigger : Sharp.UI.IStateTriggerBase { }
 public partial interface IStateTriggerBase : Sharp.UI.IBindableObject { }
-public partial interface IAdaptiveTrigger : Sharp.UI.IStateTriggerBase { } // from sealed class
-public partial interface ICompareStateTrigger : Sharp.UI.IStateTriggerBase { } // from sealed class
-public partial interface IDeviceStateTrigger : Sharp.UI.IStateTriggerBase { } // from sealed class
-public partial interface IOrientationStateTrigger : Sharp.UI.IStateTriggerBase { } // from sealed class
+public partial interface IAdaptiveTrigger : Sharp.UI.IStateTriggerBase { }
+public partial interface ICompareStateTrigger : Sharp.UI.IStateTriggerBase { }
+public partial interface IDeviceStateTrigger : Sharp.UI.IStateTriggerBase { }
+public partial interface IOrientationStateTrigger : Sharp.UI.IStateTriggerBase { }
 public partial interface IVisualStateGroupList { }
-public partial interface IVisualStateGroup { } // from sealed class
-public partial interface IVisualState { } // from sealed class
+public partial interface IVisualStateGroup { }
+public partial interface IVisualState { }

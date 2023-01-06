@@ -8,79 +8,50 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.DeviceStateTrigger</c> class.
-    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.DeviceStateTrigger</c> class.
     /// </summary>
-    public partial class DeviceStateTrigger : Sharp.UI.IDeviceStateTrigger, IMauiWrapper, ISealedMauiWrapper
+    public partial class DeviceStateTrigger : Microsoft.Maui.Controls.DeviceStateTrigger, Sharp.UI.IDeviceStateTrigger, IMauiWrapper
     {
         // ----- maui object -----
 
-        public object _maui_RawObject { get; set; }
-
-        public Microsoft.Maui.Controls.DeviceStateTrigger MauiObject { get => (Microsoft.Maui.Controls.DeviceStateTrigger)_maui_RawObject; protected set => _maui_RawObject = value; }
+        public Sharp.UI.DeviceStateTrigger MauiObject { get => this; }
 
         // ----- constructors -----
 
-        public DeviceStateTrigger(Microsoft.Maui.Controls.DeviceStateTrigger deviceStateTrigger)
-        {
-            MauiObject = deviceStateTrigger;
-        }
+        public DeviceStateTrigger() { }
 
-        public DeviceStateTrigger()
-        {
-            MauiObject = new Microsoft.Maui.Controls.DeviceStateTrigger();
-        }
-
-        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger) : this()
+        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger) 
         {
             deviceStateTrigger = this;
         }
 
-        public DeviceStateTrigger(System.Action<DeviceStateTrigger> configure) : this()
+        public DeviceStateTrigger(System.Action<DeviceStateTrigger> configure) 
         {
             configure(this);
         }
 
-        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, System.Action<DeviceStateTrigger> configure) : this()
+        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, System.Action<DeviceStateTrigger> configure) 
         {
             deviceStateTrigger = this;
             configure(this);
         }
-
-        // ----- operators -----
-
-        public static implicit operator DeviceStateTrigger(Microsoft.Maui.Controls.DeviceStateTrigger mauiObject) => new DeviceStateTrigger(mauiObject);
-        public static implicit operator Microsoft.Maui.Controls.DeviceStateTrigger(DeviceStateTrigger obj) => obj.MauiObject;
-
-        // ----- sealed bindable properties -----
-
-        public static Microsoft.Maui.Controls.BindableProperty DeviceProperty => Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty;
-        public static Microsoft.Maui.Controls.BindableProperty BindingContextProperty => Microsoft.Maui.Controls.BindableObject.BindingContextProperty;
 
         // ----- properties / events -----
 
-        public string Device { get => MauiObject.Device; set => MauiObject.Device = value; }
-        public bool IsActive { get => MauiObject.IsActive; }
-        public bool IsAttached { get => MauiObject.IsAttached; }
-        public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
-        public object BindingContext { get => MauiObject.BindingContext; set => MauiObject.BindingContext = MauiWrapper.Value<object>(value); }
-        public event System.EventHandler IsActiveChanged { add => MauiObject.IsActiveChanged += value; remove => MauiObject.IsActiveChanged -= value; }
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
-        public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }
-        public event System.EventHandler BindingContextChanged { add => MauiObject.BindingContextChanged += value; remove => MauiObject.BindingContextChanged -= value; }
+        public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
 
         // ----- set value method -----
 
-        public void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
             var mauiValue = MauiWrapper.Value<object>(value);
-            MauiObject.SetValue(property, mauiValue);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
 
-        public void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
         {
             var mauiValue = MauiWrapper.Value<object>(value);
-            MauiObject.SetValue(propertyKey, mauiValue);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
         }
     }
 }

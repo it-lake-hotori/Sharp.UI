@@ -10,41 +10,40 @@ namespace Sharp.UI
     public static class NavigableElementGeneratedExtension
     {
         public static T Style<T>(this T obj,
-            Sharp.UI.Style style)
+            Microsoft.Maui.Controls.Style style)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(style);
-            mauiObject.Style = mauiValue;
+            mauiObject.Style = (Microsoft.Maui.Controls.Style)style;
             return obj;
         }
         
         public static T Style<T>(this T obj,
-            System.Func<ValueBuilder<Sharp.UI.Style>, ValueBuilder<Sharp.UI.Style>> buildValue)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Style>, ValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildValue(new ValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.Style = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(builder.GetValue());
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
+            if (builder.ValueIsSet()) mauiObject.Style = builder.GetValue();
             return obj;
         }
         
         public static T Style<T>(this T obj,
-            System.Func<LazyValueBuilder<Sharp.UI.Style>, LazyValueBuilder<Sharp.UI.Style>> buildValue)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Style>, LazyValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.Style = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(builder.GetValue());
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Style>());
+            if (builder.ValueIsSet()) mauiObject.Style = builder.GetValue();
             return obj;
         }
         
         public static T Style<T>(this T obj,
-            System.Func<BindingBuilder<Sharp.UI.Style>, BindingBuilder<Sharp.UI.Style>> buildBinding)
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buildBinding)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildBinding(new BindingBuilder<Sharp.UI.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
             builder.BindProperty();
             return obj;
         }

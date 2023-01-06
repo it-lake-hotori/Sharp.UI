@@ -8,61 +8,40 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.Binding</c> class.
-    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Binding</c> class.
     /// </summary>
-    public partial class Binding : Sharp.UI.IBinding, IMauiWrapper, ISealedMauiWrapper
+    public partial class Binding : Microsoft.Maui.Controls.Binding, Sharp.UI.IBinding, IMauiWrapper
     {
         // ----- maui object -----
 
-        public object _maui_RawObject { get; set; }
-
-        public Microsoft.Maui.Controls.Binding MauiObject { get => (Microsoft.Maui.Controls.Binding)_maui_RawObject; protected set => _maui_RawObject = value; }
+        public Sharp.UI.Binding MauiObject { get => this; }
 
         // ----- constructors -----
 
-        public Binding(Microsoft.Maui.Controls.Binding binding)
-        {
-            MauiObject = binding;
-        }
+        public Binding() { }
 
-        public Binding()
-        {
-            MauiObject = new Microsoft.Maui.Controls.Binding();
-        }
-
-        public Binding(out Binding binding) : this()
+        public Binding(out Binding binding) 
         {
             binding = this;
         }
 
-        public Binding(System.Action<Binding> configure) : this()
+        public Binding(System.Action<Binding> configure) 
         {
             configure(this);
         }
 
-        public Binding(out Binding binding, System.Action<Binding> configure) : this()
+        public Binding(out Binding binding, System.Action<Binding> configure) 
         {
             binding = this;
             configure(this);
         }
-
-        // ----- operators -----
-
-        public static implicit operator Binding(Microsoft.Maui.Controls.Binding mauiObject) => new Binding(mauiObject);
-        public static implicit operator Microsoft.Maui.Controls.Binding(Binding obj) => obj.MauiObject;
 
         // ----- properties / events -----
 
-        public Microsoft.Maui.Controls.IValueConverter Converter { get => MauiObject.Converter; set => MauiObject.Converter = value; }
-        public object ConverterParameter { get => MauiObject.ConverterParameter; set => MauiObject.ConverterParameter = MauiWrapper.Value<object>(value); }
-        public string Path { get => MauiObject.Path; set => MauiObject.Path = value; }
-        public object Source { get => MauiObject.Source; set => MauiObject.Source = MauiWrapper.Value<object>(value); }
-        public string UpdateSourceEventName { get => MauiObject.UpdateSourceEventName; set => MauiObject.UpdateSourceEventName = value; }
-        public Microsoft.Maui.Controls.BindingMode Mode { get => MauiObject.Mode; set => MauiObject.Mode = value; }
-        public string StringFormat { get => MauiObject.StringFormat; set => MauiObject.StringFormat = value; }
-        public object TargetNullValue { get => MauiObject.TargetNullValue; set => MauiObject.TargetNullValue = MauiWrapper.Value<object>(value); }
-        public object FallbackValue { get => MauiObject.FallbackValue; set => MauiObject.FallbackValue = MauiWrapper.Value<object>(value); }
+        public new object ConverterParameter { get => base.ConverterParameter; set => base.ConverterParameter = MauiWrapper.Value<object>(value); }
+        public new object Source { get => base.Source; set => base.Source = MauiWrapper.Value<object>(value); }
+        public new object TargetNullValue { get => base.TargetNullValue; set => base.TargetNullValue = MauiWrapper.Value<object>(value); }
+        public new object FallbackValue { get => base.FallbackValue; set => base.FallbackValue = MauiWrapper.Value<object>(value); }
 
     }
 }
